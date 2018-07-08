@@ -86,10 +86,8 @@ async def sloth():
 @bot.command(pass_context=True)
 @check_if_owner()
 async def addtodo(ctx, *, message):
-    """add a to do task to your to do txt file"""
-    print(dir(bot))
-    with open("todo.txt", "a") as f:
-        f.write(message + "\n")
+    """add a to do task to your to do channel"""
+    await bot.send_message(discord.Object(id="465513192865660956"), message)
     await bot.delete_message(ctx.message)
     await bot.say("Yes master, I added it to your to do list :eggplant:")
 
@@ -98,8 +96,8 @@ async def addtodo(ctx, *, message):
 async def suggest(ctx, *, message):
     """command to suggest something"""
     author = ctx.message.author
-    with open("suggestions.txt", "a") as f:
-        f.write(message + " - " + str(author) + "\n")
+    output = "{} - {}".format(message, author)
+    await bot.send_message(discord.Object(id="465513216034734080"), output)
     await bot.say("Yes sir, I heard your calls and will relay it to my master :eggplant:")
 
 
