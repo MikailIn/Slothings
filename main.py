@@ -34,6 +34,7 @@ sloth_images = ["https://i.imgur.com/74ketp5.jpg", "https://i.imgur.com/27n3GOp.
                 "https://i.imgur.com/Gw4Lvbv.gif", "https://i.imgur.com/9Ukzhb7.gif"
                 ]
 
+
 def check_if_owner():
     """checks if the user is the owner of the bot"""
     def predicate(ctx):
@@ -50,6 +51,7 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print("------")
+    await bot.change_presence(game=discord.Game(name="with my dingdong"))
 
 
 @bot.event
@@ -65,7 +67,7 @@ async def on_message(message):
 @bot.command()
 async def ping():
     """ping pong"""
-    await bot.say("Pong!")
+    await bot.say(":ping_pong: Pong!")
 
 
 @bot.command(no_pm=True)
