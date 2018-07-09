@@ -7,6 +7,7 @@ from discord.ext.commands import Bot
 
 token = "NDY1NTAyMjYwOTQ5MDI0NzY4.DiOezw.I3JO-1DxmLPPizL_ke7dGGzrXaY"
 bot = commands.Bot(command_prefix="?")
+bot.remove_command("help")
 
 sloth_images = ["https://i.imgur.com/74ketp5.jpg", "https://i.imgur.com/27n3GOp.gif", "https://i.imgur.com/Y273oWN.gif",
                 "https://i.imgur.com/ngEzEx3.jpg", "https://i.imgur.com/I1705Pl.jpg", "https://i.imgur.com/8NDtJIn.jpg",
@@ -101,6 +102,21 @@ async def suggest(ctx, *, message):
     output = "{} - {}".format(message, author)
     await bot.send_message(discord.Object(id="465513216034734080"), output)
     await bot.say("Yes sir, I heard your calls and will relay it to my master :eggplant:")
+
+@bot.command(pass_context=True)
+async def help(ctx):
+    p = ctx.prefix
+    em_owner = discord.Embed(colour=0xF4B042)
+    em_owner.set_author(name="Bot owner commands")
+    em_owner.add_field(name="{}addtodo something".format(p), value="Adds something to your to do channel", inline=False)
+    await bot.say(embed=em_owner)
+    em_user = discord.Embed(colour=0xF4B042)
+    em_user.set_author(name="User commands")
+    em_user.add_field(name="{}ping".format(p), value="Returns Pong", inline=False)
+    em_user.add_field(name="{}say something".format(p), value="Returns something", inline=False)
+    em_user.add_field(name="{}sloth".format(p), value="Returns an image or a gif of a sloth", inline=False)
+    em_user.add_field(name="{}suggest something".format(p), value="Adds something to your suggestion channel", inline=False)
+    await bot.say(embed=em_user)
 
 
 bot.run(token)
