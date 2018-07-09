@@ -55,9 +55,9 @@ async def on_ready():
 @bot.event
 async def on_message(message):
     """reacts when someone types kys or kms"""
-    if message.content.lower() == "kys":
+    if message.content.lower() == "kys" and not message.author.bot:
         await bot.send_message(message.channel, "no u")
-    if message.content.lower() == "kms":
+    if message.content.lower() == "kms" and not message.author.bot:
         await bot.send_message(message.channel, "do it")
     await bot.process_commands(message)
 
