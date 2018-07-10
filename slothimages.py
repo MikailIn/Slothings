@@ -1,0 +1,28 @@
+
+
+sloth_images = ["https://i.imgur.com/74ketp5.jpg", "https://i.imgur.com/27n3GOp.gif", "https://i.imgur.com/Y273oWN.gif",
+                "https://i.imgur.com/ngEzEx3.jpg", "https://i.imgur.com/I1705Pl.jpg", "https://i.imgur.com/8NDtJIn.jpg",
+                "https://i.imgur.com/EMgtKOm.png", "https://i.imgur.com/RraDXN9.jpg", "https://i.imgur.com/p8L1hIT.jpg",
+                "https://i.imgur.com/JzIWQIM.gif", "https://i.imgur.com/l2KTb00.jpg", "https://i.imgur.com/puQuUs5.jpg",
+                "https://i.imgur.com/YAcqg7w.jpg", "https://i.imgur.com/sBHrOkJ.gif", "https://i.imgur.com/sLtkdBr.jpg",
+                "https://i.imgur.com/CDyCzXm.gif", "https://i.imgur.com/EnEP2yq.jpg", "https://i.imgur.com/Yepk0Ud.jpg",
+                "https://i.imgur.com/xCfzNXO.jpg", "https://i.imgur.com/sOZZAir.gif", "https://i.imgur.com/LssIjF9.jpg",
+                "https://i.imgur.com/wxEmLlC.jpg", "https://i.imgur.com/wfi5hJ6.jpg", "https://i.imgur.com/LS4ti6h.jpg",
+                "https://i.imgur.com/Ykyij7u.jpg", "https://i.imgur.com/q6WOKq2.png", "https://i.imgur.com/ReRFgW4.jpg",
+                "https://i.imgur.com/Xwc5Qg6.png", "https://i.imgur.com/otahtk4.gif", "https://i.imgur.com/zjW9r80.png",
+                "https://i.imgur.com/Bct0Mdi.gif", "https://i.imgur.com/EdhlSbk.gif", "https://i.imgur.com/00ztlUs.gif",
+                "https://i.imgur.com/y13e8nl.gif", "https://i.imgur.com/mF5H06x.gif", "https://i.imgur.com/jhgFhmX.gif",
+                "https://i.imgur.com/fo4veCm.gif", "https://i.imgur.com/LVvVUrW.gif", "https://i.imgur.com/qtJPkBn.jpg",
+                "https://i.imgur.com/A9AjH7f.jpg", "https://i.imgur.com/wCGMMH7.jpg", "https://i.imgur.com/kt8yN6j.jpg",
+                "https://i.imgur.com/axcwJfK.jpg", "https://i.imgur.com/cVKBzvE.gif", "https://i.imgur.com/Jq6q8kc.jpg",
+                "https://i.imgur.com/8OH7Dab.jpg", "https://i.imgur.com/M73UL6v.jpg", "https://i.imgur.com/hght8r4.jpg",
+                "https://i.imgur.com/CFuGETz.jpg", "https://i.imgur.com/NG9WL3A.jpg", "https://i.imgur.com/NawCi3o.jpg",
+                "https://i.imgur.com/9u6aHsL.jpg", "https://i.imgur.com/LsDP2qh.jpg", "https://i.imgur.com/abfB5Z7.jpg",
+                "https://i.imgur.com/PPOUg39.jpg", "https://i.imgur.com/xvaS5e8.jpg", "https://i.imgur.com/W2YiMGU.jpg",
+                "https://i.imgur.com/9WpsU4D.jpg", "https://i.imgur.com/rUvqb0s.jpg", "https://i.imgur.com/aeAHtoz.jpg",
+                "https://i.imgur.com/QBFslbK.jpg", "https://i.imgur.com/8edeNwP.jpg", "https://i.imgur.com/WWqetVw.jpg",
+                "https://i.imgur.com/VZRCpSg.jpg", "https://i.imgur.com/biVjC5X.jpg", "https://i.imgur.com/pVOvSZx.jpg",
+                "https://i.imgur.com/77t9oi7.jpg", "https://i.imgur.com/CgsOKae.jpg", "https://i.imgur.com/GtTag4V.gif",
+                "https://i.imgur.com/Gw4Lvbv.gif", "https://i.imgur.com/9Ukzhb7.gif", "https://i.imgur.com/3Kwzyw9.png",
+                "https://i.imgur.com/MadZM5E.jpg"
+                ]
