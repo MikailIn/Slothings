@@ -4,8 +4,8 @@ import random
 from discord.ext import commands
 from data.slothimages import sloth_images
 from cogs.utils import checks
+from data.tokeny import token
 
-token = "NDY1NTAyMjYwOTQ5MDI0NzY4.DiOezw.I3JO-1DxmLPPizL_ke7dGGzrXaY"
 bot = commands.Bot(command_prefix="?")
 bot.remove_command("help")
 
@@ -72,6 +72,15 @@ async def suggest(ctx, *, message):
 
 
 @bot.command(pass_context=True)
+async def report(ctx, *, message):
+    """command to suggest something"""
+    author = ctx.message.author
+    output = "{} - {}".format(message, author)
+    await bot.send_message(discord.Object(id="471825826103689218"), output)
+    await bot.say("Me feed report fakking noop idi nahui :middle_finger:")
+
+
+@bot.command(pass_context=True)
 async def help(ctx):
     """help command"""
     message = ctx.message.content.lower()
@@ -86,10 +95,10 @@ async def help(ctx):
         em = discord.Embed(title="Moderation commands", colour=0xF4B042)
         em.add_field(name="?ban", value="ban the specified user", inline=True)
         em.add_field(name="\u200b", value="requires ban members permission", inline=True)
-        em.add_field(name="\u200b", value="\u200b", inline=True)
         em.add_field(name="?kick", value="kick the specified user", inline=True)
         em.add_field(name="\u200b", value="requires kick members permission", inline=True)
-        em.add_field(name="\u200b", value="\u200b", inline=True)
+        em.add_field(name="?addtodo", value="add something to the to do channel", inline=True)
+        em.add_field(name="\u200b", value="bot owner only", inline=True)
         await bot.say(embed=em)
     if message == "?help miscellaneous" or message == "?help misc":
         em = discord.Embed(title="Miscellaneous commands", colour=0xF4B042)
@@ -105,17 +114,16 @@ async def help(ctx):
         await bot.say(embed=em)
     if message == "?help information" or message == "?help info":
         em = discord.Embed(title="Miscellaneous commands", colour=0xF4B042)
+        em.add_field(name="?git", value="posts the github repository of the bot", inline=True)
+        em.add_field(name="\u200b", value="\u200b", inline=True)
         em.add_field(name="?help", value="opens help", inline=True)
         em.add_field(name="\u200b", value="\u200b", inline=True)
         em.add_field(name="\u200b", value="\u200b", inline=True)
         em.add_field(name="?invite", value="gives the bot invite link", inline=True)
         em.add_field(name="\u200b", value="\u200b", inline=True)
-        em.add_field(name="\u200b", value="\u200b", inline=True)
         em.add_field(name="?suggest", value="suggest something to the bot owner", inline=True)
         em.add_field(name="\u200b", value="\u200b", inline=True)
-        em.add_field(name="\u200b", value="\u200b", inline=True)
-        em.add_field(name="?git", value="posts the github repository of the bot", inline=True)
-        em.add_field(name="\u200b", value="\u200b", inline=True)
+        em.add_field(name="?report", value="report something to the bot owner", inline=True)
         em.add_field(name="\u200b", value="\u200b", inline=True)
         await bot.say(embed=em)
 
