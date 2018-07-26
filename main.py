@@ -74,14 +74,17 @@ async def help(ctx):
     p = ctx.prefix
     em_owner = discord.Embed(colour=0xF4B042)
     em_owner.set_author(name="Bot owner commands")
-    em_owner.add_field(name="{}addtodo something".format(p), value="Adds something to your to do channel", inline=False)
+    em_owner.add_field(name="{}addtodo".format(p), value="Adds something to the todo channel", inline=False)
     await bot.say(embed=em_owner)
     em_user = discord.Embed(colour=0xF4B042)
     em_user.set_author(name="User commands")
     em_user.add_field(name="{}ping".format(p), value="Returns Pong", inline=False)
-    em_user.add_field(name="{}say something".format(p), value="Returns something", inline=False)
+    em_user.add_field(name="{}say".format(p), value="Repeats after you", inline=False)
     em_user.add_field(name="{}sloth".format(p), value="Returns an image or a gif of a sloth", inline=False)
-    em_user.add_field(name="{}suggest something".format(p), value="Adds something to your suggestion channel", inline=False)
+    em_user.add_field(name="{}suggest something".format(p), value="Suggests something", inline=False)
+    em_user.add_field(name="{}invite".format(p), value="Returns the invite link of the bot", inline=False)
+    em_user.add_field(name="{}kick @someone reason".format(p), value="Kicks someone", inline=False)
+    em_user.add_field(name="{}ban @someone reason".format(p), value="Bans someone", inline=False)
     await bot.say(embed=em_user)
 
 
