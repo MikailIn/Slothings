@@ -1,23 +1,14 @@
 import discord
 import asyncio
 import random
-import os
 from discord.ext import commands
-from slothimages import sloth_images
+from data.slothimages import sloth_images
+from cogs.utils import checks
 
 token = "NDY1NTAyMjYwOTQ5MDI0NzY4.DiOezw.I3JO-1DxmLPPizL_ke7dGGzrXaY"
 bot = commands.Bot(command_prefix="?")
 bot.remove_command("help")
 
-
-def check_if_owner():
-    """checks if the user is the owner of the bot"""
-    def predicate(ctx):
-        if ctx.message.author.id == "183234193281646592":
-            return True
-        else:
-            return False
-    return commands.check(predicate)
 
 
 @bot.event
@@ -61,7 +52,7 @@ async def sloth():
 
 
 @bot.command(pass_context=True)
-@check_if_owner()
+@checks.check_if_owner()
 async def addtodo(ctx, *, message):
     """add a to do task to your to do channel"""
     await bot.send_message(discord.Object(id="465513192865660956"), message)
