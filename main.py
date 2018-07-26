@@ -16,6 +16,9 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print("------")
+    print(
+        "  _____ _       _   _     \n / ____| |     | | | |    \n| (___ | | ___ | |_| |__  \n \___ \| |/ _ \| __| '"
+        "_ \ \n ____) | | (_) | |_| | | |\n|_____/|_|\___/ \__|_| |_|")
     await bot.change_presence(game=discord.Game(name="with my dingdong"))
 
 
