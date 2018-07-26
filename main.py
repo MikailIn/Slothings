@@ -4,8 +4,8 @@ import random
 from discord.ext import commands
 from data.slothimages import sloth_images
 from cogs.utils import checks
+from tokeny import token
 
-token = "NDY1NTAyMjYwOTQ5MDI0NzY4.DiOezw.I3JO-1DxmLPPizL_ke7dGGzrXaY"
 bot = commands.Bot(command_prefix="?")
 bot.remove_command("help")
 
@@ -86,10 +86,10 @@ async def help(ctx):
         em = discord.Embed(title="Moderation commands", colour=0xF4B042)
         em.add_field(name="?ban", value="ban the specified user", inline=True)
         em.add_field(name="\u200b", value="requires ban members permission", inline=True)
-        em.add_field(name="\u200b", value="\u200b", inline=True)
         em.add_field(name="?kick", value="kick the specified user", inline=True)
         em.add_field(name="\u200b", value="requires kick members permission", inline=True)
-        em.add_field(name="\u200b", value="\u200b", inline=True)
+        em.add_field(name="?addtodo", value="add something to the to do channel", inline=True)
+        em.add_field(name="\u200b", value="bot owner only", inline=True)
         await bot.say(embed=em)
     if message == "?help miscellaneous" or message == "?help misc":
         em = discord.Embed(title="Miscellaneous commands", colour=0xF4B042)
