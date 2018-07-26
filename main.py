@@ -71,21 +71,50 @@ async def suggest(ctx, *, message):
 @bot.command(pass_context=True)
 async def help(ctx):
     """help command"""
-    p = ctx.prefix
-    em_owner = discord.Embed(colour=0xF4B042)
-    em_owner.set_author(name="Bot owner commands")
-    em_owner.add_field(name="{}addtodo".format(p), value="Adds something to the todo channel", inline=False)
-    await bot.say(embed=em_owner)
-    em_user = discord.Embed(colour=0xF4B042)
-    em_user.set_author(name="User commands")
-    em_user.add_field(name="{}ping".format(p), value="Returns Pong", inline=False)
-    em_user.add_field(name="{}say".format(p), value="Repeats after you", inline=False)
-    em_user.add_field(name="{}sloth".format(p), value="Returns an image or a gif of a sloth", inline=False)
-    em_user.add_field(name="{}suggest something".format(p), value="Suggests something", inline=False)
-    em_user.add_field(name="{}invite".format(p), value="Returns the invite link of the bot", inline=False)
-    em_user.add_field(name="{}kick @someone reason".format(p), value="Kicks someone", inline=False)
-    em_user.add_field(name="{}ban @someone reason".format(p), value="Bans someone", inline=False)
-    await bot.say(embed=em_user)
+    message = ctx.message.content.lower()
+    if message == "?help":
+        em = discord.Embed(title="Sloth commands", colour=0xF4B042)
+        em.add_field(name="Moderation", value="Some moderation commands for the mods.", inline=False)
+        em.add_field(name="Miscellaneous", value="Misc commands to have fun with!", inline=False)
+        em.add_field(name="Information", value="Get information about the bot here!", inline=False)
+        em.set_footer(text="Type ?help <mod/misc/...> to see the list of commands")
+        await bot.say(embed=em)
+    if message == "?help moderation" or message == "?help mod":
+        em = discord.Embed(title="Moderation commands", colour=0xF4B042)
+        em.add_field(name="?ban", value="ban the specified user", inline=True)
+        em.add_field(name="\u200b", value="requires ban members permission", inline=True)
+        em.add_field(name="\u200b", value="\u200b", inline=True)
+        em.add_field(name="?kick", value="kick the specified user", inline=True)
+        em.add_field(name="\u200b", value="requires kick members permission", inline=True)
+        em.add_field(name="\u200b", value="\u200b", inline=True)
+        await bot.say(embed=em)
+    if message == "?help miscellaneous" or message == "?help misc":
+        em = discord.Embed(title="Miscellaneous commands", colour=0xF4B042)
+        em.add_field(name="?ping", value="returns pong!", inline=True)
+        em.add_field(name="\u200b", value="\u200b", inline=True)
+        em.add_field(name="\u200b", value="\u200b", inline=True)
+        em.add_field(name="?say", value="repeats after you", inline=True)
+        em.add_field(name="\u200b", value="\u200b", inline=True)
+        em.add_field(name="\u200b", value="\u200b", inline=True)
+        em.add_field(name="?sloth", value="posts an image of a cute sloth", inline=True)
+        em.add_field(name="\u200b", value="\u200b", inline=True)
+        em.add_field(name="\u200b", value="\u200b", inline=True)
+        await bot.say(embed=em)
+    if message == "?help information" or message == "?help info":
+        em = discord.Embed(title="Miscellaneous commands", colour=0xF4B042)
+        em.add_field(name="?help", value="opens help", inline=True)
+        em.add_field(name="\u200b", value="\u200b", inline=True)
+        em.add_field(name="\u200b", value="\u200b", inline=True)
+        em.add_field(name="?invite", value="gives the bot invite link", inline=True)
+        em.add_field(name="\u200b", value="\u200b", inline=True)
+        em.add_field(name="\u200b", value="\u200b", inline=True)
+        em.add_field(name="?suggest", value="suggest something to the bot owner", inline=True)
+        em.add_field(name="\u200b", value="\u200b", inline=True)
+        em.add_field(name="\u200b", value="\u200b", inline=True)
+        em.add_field(name="?git", value="posts the github repository of the bot", inline=True)
+        em.add_field(name="\u200b", value="\u200b", inline=True)
+        em.add_field(name="\u200b", value="\u200b", inline=True)
+        await bot.say(embed=em)
 
 
 @bot.command()
@@ -127,6 +156,11 @@ async def ban(ctx, username: discord.User):
         await bot.send_message(username, "You were banned from **{}**. Reason:\n*{}*".format(server, reason))
     await bot.ban(username, delete_message_days=0)
     await bot.say("{} got banned from the server. Poor soul, they did not deserve this (╯°□°）╯︵ ┻━┻".format(username))
+
+
+@bot.command()
+async def git():
+    await bot.say("**The github repository of the bot:**\nhttps://www.github.com/MrVestacus/Sloth")
 
 
 bot.run(token)
