@@ -10,7 +10,6 @@ bot = commands.Bot(command_prefix="?")
 bot.remove_command("help")
 
 
-
 @bot.event
 async def on_ready():
     print("Logged in as")
@@ -71,6 +70,7 @@ async def suggest(ctx, *, message):
 
 @bot.command(pass_context=True)
 async def help(ctx):
+    """help command"""
     p = ctx.prefix
     em_owner = discord.Embed(colour=0xF4B042)
     em_owner.set_author(name="Bot owner commands")
@@ -83,6 +83,47 @@ async def help(ctx):
     em_user.add_field(name="{}sloth".format(p), value="Returns an image or a gif of a sloth", inline=False)
     em_user.add_field(name="{}suggest something".format(p), value="Adds something to your suggestion channel", inline=False)
     await bot.say(embed=em_user)
+
+
+@bot.command()
+async def invite():
+    """gives the bot invite link"""
+    url = "https://discordapp.com/api/oauth2/authorize?client_id=462878456598888449&permissions=469888118&scope=bot"
+    await bot.say("**My invite link:**\n{}".format(url))
+
+
+@bot.command(pass_context=True)
+@commands.has_permissions(kick_members=True)
+@commands.bot_has_permissions(kick_members=True)
+async def kick(ctx, username: discord.User):
+    """kicks someone"""
+    server = ctx.message.server
+    message = ctx.message.content.split()
+    reason = " ".join(message[2:])
+    if reason == "":
+        await bot.send_message(username, "You were kicked from **{}**.".format(server))
+    else:
+        await bot.say(reason)
+        await bot.send_message(username, "You were kicked from **{}**. Reason:\n*{}*".format(server, reason))
+    await bot.kick(username)
+    await bot.say("{} got kicked from the server. Bye-bye :wave:".format(username))
+
+
+@bot.command(pass_context=True)
+@commands.has_permissions(ban_members=True)
+@commands.bot_has_permissions(ban_members=True)
+async def ban(ctx, username: discord.User):
+    """bans someone"""
+    server = ctx.message.server
+    message = ctx.message.content.split()
+    reason = " ".join(message[2:])
+    if reason == "":
+        await bot.send_message(username, "You were banned from **{}**.".format(server))
+    else:
+        await bot.say(reason)
+        await bot.send_message(username, "You were banned from **{}**. Reason:\n*{}*".format(server, reason))
+    await bot.ban(username, delete_message_days=0)
+    await bot.say("{} got banned from the server. Poor soul, they did not deserve this (╯°□°）╯︵ ┻━┻".format(username))
 
 
 bot.run(token)
